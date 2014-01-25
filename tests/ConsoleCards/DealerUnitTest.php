@@ -2,7 +2,6 @@
 
 use ConsoleCards\Dealer;
 
-
 class DealerUnitTest extends \PHPUnit_Framework_TestCase 
 {
     protected $dealer;
@@ -55,6 +54,9 @@ class DealerUnitTest extends \PHPUnit_Framework_TestCase
             
             // this might be nicer using an interface like:
             //    $deck->dealCard() and $deck->nextCard()
+            
+            // if cards had managed IDs, i could just check that's not sequential
+            // also, not sure if anyone cares about King -> Ace -> 2
             
             if ($thisCard->getSuit() == $nextCard->getSuit()) {
                 if ($thisCard->getRank() == $nextCard->getRank()-1 || $thisCard->getRank() == $nextCard->getRank()+1) {
